@@ -7,8 +7,7 @@
 ```bash
 # 安装依赖
 uv sync
-
-# 一条命令运行所有必做实验：A1 baseline、A2 PPO 训练、A3 exploitability
+# 一条命令运行所有
 uv run python run_all.py
 ```
 
@@ -24,8 +23,6 @@ python run_all.py
 uv run python src/task_a1_baseline.py
 uv run python src/task_a2_ppo_training.py
 uv run python src/task_a3_exploitability.py
-
-# 可选加分项：对手策略固定/变化实验
 uv run python src/task_c_opponent_modeling.py
 ```
 
@@ -34,22 +31,22 @@ uv run python src/task_c_opponent_modeling.py
 ```
 kuhn-poker-ppo/
 ├── src/
-│   ├── agents/ppo_agent.py          # PPO 核心实现
-│   ├── task_a1_baseline.py          # 任务 A1：随机策略
-│   ├── task_a2_ppo_training.py      # 任务 A2：PPO 训练（完整版）
-│   ├── task_a3_exploitability.py    # 任务 A3：Exploitability
-│   └── task_c_opponent_modeling.py  # 任务 C：对手策略实验
+│   ├── agents/ppo_agent.py           # PPO 核心实现
+│   ├── task_a1_baseline.py           # 任务 A1：随机策略
+│   ├── task_a2_ppo_training.py       # 任务 A2：PPO 训练
+│   ├── task_a3_exploitability.py     # 任务 A3：Exploitability
+│   └── task_c_opponent_modeling.py   # 任务 C：对手策略实验
 ├── results/
 │   ├── models/                       # 训练好的模型
-│   ├── task_a1_baseline.json        # 实验数据
-│   ├── task_a2_history.json         # 训练历史
-│   ├── task_a2_training_curves.png  # 训练曲线
-│   ├── task_a3_exploitability.json  # Exploitability 数据
+│   ├── task_a1_baseline.json         # 实验数据
+│   ├── task_a2_history.json          # 训练历史
+│   ├── task_a2_training_curves.png   # 训练曲线
+│   ├── task_a3_exploitability.json   # Exploitability 数据
 │   └── task_c_opponent_modeling.json # 对手策略实验数据
 ├── run_all.py                        # 一键运行所有必做实验
 ├── README.md                         # 本文件
-├── REPORT.md                         # 最终报告（含 AI 协作说明）
-└── ANALYSIS.md                       # 任务 B 详细分析
+├── REPORT.md                         # 最终报告
+└── TASK.md                           # 任务需求
 ```
 
 ## 实验结果
@@ -86,8 +83,6 @@ kuhn-poker-ppo/
 - PPO 自我对弈在不完美信息博弈中难以收敛
 - 50,000 episodes 后 PPO 比随机策略更难被利用，但离 CFR 仍有数量级差距
 - CFR 等有理论保证的算法更适合扑克游戏
-
-详见 `REPORT.md` 和 `ANALYSIS.md`
 
 ## 依赖
 
